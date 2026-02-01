@@ -6,4 +6,10 @@ from django.http import HttpResponse
 
 def home(request):
     print("home")
-    return render(request,"home/index.html")
+
+    context = {
+        'text':"Estou na Home!",
+        'title': 'Home - '
+    }
+
+    return render(request,"home/index.html", context)

@@ -5,9 +5,16 @@ from django.http import HttpResponse
 # Create your views here.
 
 def blog(request):
-    print("Olá django!!!")
-    return render(request, 'blog/index.html')
+    
+    context = {
+        'text': 'Estou no Blog',
+        'title': 'Blog - '
+    }
+    return render(request, 'blog/index.html', context)
 
 def exemplo(request):
-    print("exemplo do blog")
-    return render(request, 'blog/exemplo.html')
+    context = {
+        'text' : 'Estou em exemplo do blog',
+        'title' : 'Exemplo - '
+    }
+    return render(request, 'blog/exemplo.html', context)
