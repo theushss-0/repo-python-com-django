@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from blog.data import posts
 
 
 # Create your views here.
@@ -7,8 +7,8 @@ from django.http import HttpResponse
 def blog(request):
     
     context = {
-        'text': 'Estou no Blog',
-        'title': 'Blog - '
+        'text': '',
+        'posts': posts,
     }
     return render(request, 'blog/index.html', context)
 
